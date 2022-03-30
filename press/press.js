@@ -16,18 +16,18 @@ async function getPress(req,res) {
 async function addPress(req,res) {
     try{
         // let image =req.file.originalname
-        let userId=req.params.id
+        // let userId=req.params.id
 
         const category = new PressModel({
             
-            firstName:req.body.firstName,
-            surName:req.body.surName,
-            address:req.body.address,
-            birth:req.body.birth,
-            degree:req.body.degree,
-            login:req.body.login,
-            password: req.body.password,
-            passwordCop: req.body.passwordCop,
+            userId:req.body.userId,
+            title:req.body.title,
+            genre:req.body.genre,
+            tags:req.body.tags,
+            theme:req.body.theme,
+            text:req.body.text,
+            view: req.body.view,
+            commit: req.body.commit,
         })
       
         category.save((err, category) => {
