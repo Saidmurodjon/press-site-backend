@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 const userSchema = mongoose.Schema({
     firstName:String,
     surName:String,
-    age:String,
     address:[{
         country:String,
         sity:String
@@ -11,7 +10,6 @@ const userSchema = mongoose.Schema({
     degree:String,
     login:String,
     password:String,
-    birth:String,
     passwordCop:String,
     role:{
         type:String,

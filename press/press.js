@@ -1,11 +1,11 @@
-const UserModel=require('./user.model')
+const PressModel=require('./press.model')
 const fs = require('fs');
 const path = require('path');
 
-async function getUser(req,res) {
+async function getPress(req,res) {
     try{
-        const users=await UserModel.find({})
-        return res.status(200).send(users)
+        const press=await PressModel.find({})
+        return res.status(200).send(press)
     }catch(err){
         res.status(400).send(err)
         console.log(err);
@@ -13,12 +13,12 @@ async function getUser(req,res) {
 }
 
 
-async function addUser(req,res) {
+async function addPress(req,res) {
     try{
         // let image =req.file.originalname
-        
+        let userId=req.params.id
 
-        const category = new UserModel({
+        const category = new PressModel({
             
             firstName:req.body.firstName,
             surName:req.body.surName,
@@ -128,8 +128,8 @@ async function addUser(req,res) {
 // }
 
 module.exports={
-    getUser,
-    addUser
+    getPress,
+    addPress
     // updatePupils,
     // deletePupils,
     // payPupils
