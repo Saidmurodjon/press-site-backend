@@ -16,7 +16,7 @@ const url = `mongodb+srv://theBest:1020@cluster0.m79kn.mongodb.net/press-site`;
 const connectionParams={
     useNewUrlParser: true,
     
-    useUnifiedTopology: true 
+    useUnifiedTopology: true    
 }
 mongoose.connect(url,connectionParams)
     .then( () => {

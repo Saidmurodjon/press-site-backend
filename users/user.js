@@ -21,10 +21,12 @@ async function addUser(req,res) {
         const category = new UserModel({
             
             firstName:req.body.firstName,
-            surName:req.body.surName,
+            sureName:req.body.sureName,
             address:req.body.address,
             birth:req.body.birth,
             degree:req.body.degree,
+            country:req.body.country,
+            sity:req.body.sity,
             login:req.body.login,
             password: req.body.password,
             passwordCop: req.body.passwordCop,
@@ -44,6 +46,7 @@ async function addUser(req,res) {
         })
     }catch(err){
         res.status(400).send(err)
+        console.log(err);
     }
 }
 
